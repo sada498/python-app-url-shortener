@@ -130,3 +130,7 @@
     nano urlshort/urlshort.py
     ```
 10. Change the file location to where do you want to save the **static files** on  your server
+
+
+
+   **Thanks :) Nick Walter**
