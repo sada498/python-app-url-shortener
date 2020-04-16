@@ -1,6 +1,6 @@
 # URL-Shortener Application
  ## Flask-Jinja-Gunicorn
-   1. Create a project required environment
+  1. Create a project required environment
   2. Install a pipenv 
       ```
       pip3 install pipenv
@@ -23,7 +23,8 @@
      ```
      set FLASK_APP=urlshort
      ```
-     **Note: Go to the your virtualenv in terminal  for windows**
+   **Note: Go to the your virtualenv in terminal  for windows**
+     
      ```
      export FLASK_APP=urlshort
      ``` 
@@ -66,36 +67,45 @@
      export FlASK_APP=urlshort  
      ```
    **(Note: I use export because of Linux terminal )**
-   
      ```
      flask run
      ```
- 4. After that make your application public 
-    ```
-    flask run –host=0.0.0.0
-    ```
- 5. Visit the server public ip with port id
-    ```
-    Ip:portnumber
-    ```
+  4. After that make your application public 
+     ```
+     flask run –host=0.0.0.0
+     ```
+  5. Visit the server public ip with port id
+     ```
+     Ip:portnumber
+     ```
 ## How to integrate Flask with Gunicorn
 
  1. Install Gunicorn on same server 
- 	Pipenv install gunicorn
+    ```
+   	pipenv install gunicorn
+    ```
  2. Running with Gunicorn
-  Gunicorn “urlshort:create_app()” -b 0.0.0.0 
+    ```
+    gunicorn “urlshort:create_app()” -b 0.0.0.0 
+    ```
  3. Recommend to run flask on nginx (to install on Linux )
+    ```
     sudo apt install nginx 
+    ```
  4. To check the nginx running on server
-   systemctl status nginx
- Note: check the Status check Active
- To quit of that enter press “ q ”
+    ```
+    systemctl status nginx
+    ```
+  Note: check the Status check Active
+  To quit of that enter press “ q ”
  5. To fix the configuration of the file to enable  the app in nginx 
- Sudo nano /etc/ninx/sites-enabled/default
+    ```
+    sudo nano /etc/ninx/sites-enabled/default
+    ```
+ 6. Past the following code on the configuration file check the both **server and location**
 
- 6. Past the following code on the configuration file check the both server and location
-
-    ```server {
+    ```
+    server {
     listen 80;
     server_name example.org;
     access_log  /var/log/nginx/example.log;
@@ -109,9 +119,15 @@
     ```
 
  7. After setting up the above code into config file
-   Ctrl +x ( exit )
+    ```
+    Ctrl +x ( exit )
+    ```
  8. Run the gunicorn all the time 
-  gunicorn “urlshort:create_app( ) ” -b 0.0.0.0 --daemon 
- 9. upload files to correct location on server according to our app.
-   Nano urlshort/urlshort.py
-Change the file location to where do you want to save on  your server 
+    ```
+    gunicorn “urlshort:create_app( ) ” -b 0.0.0.0 --daemon 
+    ```
+ 9. Upload files to correct location on server according to our app.
+    ```
+    nano urlshort/urlshort.py
+    ```
+10. Change the file location to where do you want to save the **static files** on  your server
