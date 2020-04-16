@@ -23,8 +23,7 @@
      ```
      set FLASK_APP=urlshort
      ```
-   **Note: Go to the your virtualenv in terminal  for windows**
-     
+     **Note: Go to the your virtualenv in terminal  for windows**
      ```
      export FLASK_APP=urlshort
      ``` 
@@ -66,7 +65,7 @@
      ```
      export FlASK_APP=urlshort  
      ```
-   **(Note: I use export because of Linux terminal )**
+     **(Note: I use export because of Linux terminal )**
      ```
      flask run
      ```
@@ -96,8 +95,7 @@
     ```
     systemctl status nginx
     ```
-  Note: check the Status check Active
-  To quit of that enter press “ q ”
+    **Note: check the Status check Active**
  5. To fix the configuration of the file to enable  the app in nginx 
     ```
     sudo nano /etc/ninx/sites-enabled/default
